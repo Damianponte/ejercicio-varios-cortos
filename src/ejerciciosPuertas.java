@@ -30,16 +30,11 @@ public class ejerciciosPuertas {
         for(int cont=0;cont<vecesrepetir;cont++)
         {
 
-            int puertaPremio = generator.nextInt(1, 3);
-
-
-            int puertaUsuario = generator.nextInt(1, 3);
+            int puertaPremio = generator.nextInt(1, 4);
+            int puertaUsuario = generator.nextInt(1, 4);
             System.out.print(" el usuario ha elejido la puerta " + puertaUsuario);
-
-            int Puertaabierta = 0;
-
-
-            while (Puertaabierta == puertaPremio || Puertaabierta == puertaUsuario++) {
+            int Puertaabierta = 1;
+            while (Puertaabierta != puertaPremio || Puertaabierta != puertaUsuario) {
                 int puertaacambiar;
                 if (Puertaabierta == 1) {
                     if (puertaUsuario == 2) {
@@ -67,9 +62,6 @@ public class ejerciciosPuertas {
                 }
 
             }
-
-
-
         }
 
 
