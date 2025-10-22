@@ -1,5 +1,7 @@
 
+import java.util.Random;
 import java.util.Scanner;
+import java.util.random.RandomGenerator;
 
 public class ejerciciosPuertas {
     public static void main(String[] args) {
@@ -22,6 +24,54 @@ public class ejerciciosPuertas {
         System.out.println("cuantas rondas va a jugar");
         Scanner lector=new Scanner(System.in);
         vecesrepetir=lector.nextInt();
+        Random generator =new Random();
+        //cont= contador,
+        int victorias=0;
+        for(int cont=0;cont<vecesrepetir;cont++);{
+            int puertaPremio= generator.nextInt(1,3);
+            System.out.print("la puerta del premio es " +  puertaPremio);
+
+            int puertaUsuario=generator.nextInt(1,3);
+            System.out.print("la puerta del usuario es " +  puertaUsuario);
+
+            int Puertaabierta=1;
+            System.out.print("la puerta que abre el presentador es " + Puertaabierta);
+            int puertaacambiar;
+            while(Puertaabierta !=puertaPremio||Puertaabierta!=puertaUsuario){
+                if(Puertaabierta==1) {
+                    if (puertaUsuario==2) {
+                        puertaacambiar=3;
+                    } else{
+
+                    }puertaacambiar=2;
+
+                }else if (Puertaabierta==2) {
+                    if (puertaUsuario==1) {
+                        puertaacambiar=3;
+                    }else{
+                        puertaacambiar=2;
+                    }
+
+
+                }else (Puertaabierta==3) {
+                    if (puertaUsuario==1) {
+                        puertaacambiar=2;
+                    }else{
+                        puertaacambiar=1;
+                    }
+
+                }
+
+            }
+
+
+
+
+        }
+
+
+
+
 
 
 
