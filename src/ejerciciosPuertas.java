@@ -34,11 +34,12 @@ public class ejerciciosPuertas {
             System.out.print(" el usuario ha elejido la puerta " + puertaUsuario);
             int Puertaabierta = 1;
             int intentos = 0;
+            int puertaacambiar=0;
             while (Puertaabierta == puertaPremio || Puertaabierta == puertaUsuario) {
                 Puertaabierta=generator.nextInt();
 
 
-                int puertaacambiar=0;
+
                 if (Puertaabierta == 1) {
                     if (puertaUsuario == 2) {
                         puertaacambiar = 3;
@@ -69,20 +70,16 @@ public class ejerciciosPuertas {
             System.out.println("El usuario a elejido la puerta" +puertaUsuario );
             System.out.println("el presentador ha elejido la puerta" + Puertaabierta);
 
-               if( puertaUsuario==puertaPremio){
+               if(puertaacambiar==puertaPremio){
                    System.out.println("El usuario ha ganado");
                    victorias++;
                 }else{
                    System.out.println("El usuario ha perdido");
-                   System.out.println("El usuario ha ganado"+ victorias++ + " de un total de" + vecesrepetir);
+
                }
 
-               if(puertaUsuario==puertacambiar){
-                   System.out.println("El usuario ha ganado" + victorias++);
-               }else{
-                   System.out.println("El usuario ha perdido");
-                   System.out.println("El usuario ha ganado"+ victorias++ + " de un total de" + vecesrepetir);
-               }
+
+
 
         }
 
