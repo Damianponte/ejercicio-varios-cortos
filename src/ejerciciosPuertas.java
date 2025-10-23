@@ -27,20 +27,23 @@ public class ejerciciosPuertas {
         Random generator =new Random();
         //cont= contador,
         int victorias=0;
-        for(int cont=0;cont<vecesrepetir;cont++)
-        {
+        for(int cont=1;cont<=vecesrepetir;cont++) {
 
             int puertaPremio = generator.nextInt(1, 4);
             int puertaUsuario = generator.nextInt(1, 4);
             System.out.print(" el usuario ha elejido la puerta " + puertaUsuario);
             int Puertaabierta = 1;
-            while (Puertaabierta != puertaPremio || Puertaabierta != puertaUsuario) {
-                int puertaacambiar;
+            int intentos = 0;
+            while (Puertaabierta == puertaPremio || Puertaabierta == puertaUsuario) {
+                Puertaabierta=generator.nextInt();
+
+
+                int puertaacambiar=0;
                 if (Puertaabierta == 1) {
                     if (puertaUsuario == 2) {
                         puertaacambiar = 3;
                     } else {
-
+                        puertaacambiar=2;
                     }
                     puertaacambiar = 2;
 
@@ -62,7 +65,32 @@ public class ejerciciosPuertas {
                 }
 
             }
+            //A) Mantener la puerta elegida inicialmente.
+            System.out.println("El usuario a elejido la puerta" +puertaUsuario );
+            System.out.println("el presentador ha elejido la puerta" + Puertaabierta);
+
+               if( puertaUsuario==puertaPremio){
+                   System.out.println("El usuario ha ganado");
+                   victorias++;
+                }else{
+                   System.out.println("El usuario ha perdido");
+                   System.out.println("El usuario ha ganado"+ victorias++ + " de un total de" + vecesrepetir);
+               }
+
+               if(puertaUsuario==puertacambiar){
+                   System.out.println("El usuario ha ganado" + victorias++);
+               }else{
+                   System.out.println("El usuario ha perdido");
+                   System.out.println("El usuario ha ganado"+ victorias++ + " de un total de" + vecesrepetir);
+               }
+
         }
+
+
+
+        //   B) Cambiar a la otra puerta disponible después de que el presentador abra una.
+               System.out.println("El usuario ha ganado"+ victorias++ + " de un total de" + vecesrepetir);
+
 
 
 
